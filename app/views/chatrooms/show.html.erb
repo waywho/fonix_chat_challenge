@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="columns">
+	<div class="column is-one-quarter">
+		<% Chatroom.all.each do |chatroom| %>
+			<%= link_to chatroom.name, chatroom %>
+		<% end %>
+	</div>
+	<div class="column">
+	</div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chatroom.name %>
-</p>
-
-<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<%= link_to 'Back', chatrooms_path %>

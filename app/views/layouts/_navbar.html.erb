@@ -9,18 +9,14 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
-        Chatrooms
-      </a>
+      <%= link_to 'Chatrooms', chatrooms_path, class: "navbar-item" %>
     </div>
       
 
     <div class="navbar-end">
       <div class="navbar-item">
         <% if user_signed_in? %>
-          <div class="navbar-item">
-            <%= link_to 'Sign out', destroy_user_session_path %>
-          </div>
+          <%= link_to 'Sign out', destroy_user_session_path, class: "navbar-item" %>
         <% else %>
           <div class="buttons">
             <a class="button is-primary">
