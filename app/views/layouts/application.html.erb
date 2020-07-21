@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render "layouts/navbar"%>
+    <section class="section">
+      <div class="container is-fluid">
+        <% if notice.present? %>
+        <p class="message is-info"><%= notice %></p>
+        <% end %>
+
+        <% if alert.present? || flash[:error] %>
+          <p class="message is-danger"><%= alert || flash[:error] %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>
