@@ -11,11 +11,8 @@
   <tbody>
     <% @chatrooms.each do |chatroom| %>
       <tr>
-        <td><%= chatroom.name %></td>
-        <td><%= link_to 'Show', chatroom %></td>
+        <td><%= link_to chatroom.name, chatroom %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-

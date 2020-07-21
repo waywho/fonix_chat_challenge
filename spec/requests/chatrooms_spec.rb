@@ -23,6 +23,11 @@ RSpec.describe "/chatrooms", type: :request do
     { name: nil }
   }
 
+  before(:each) do
+    @user = FactoryBot.create(:user)
+    sign_in @user
+  end
+
   describe "GET /index" do
     it "renders a successful response" do
       Chatroom.create! valid_attributes

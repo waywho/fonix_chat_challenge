@@ -1,10 +1,13 @@
-<div class="columns">
-	<div class="column is-one-quarter">
-		<% Chatroom.all.each do |chatroom| %>
-			<%= link_to chatroom.name, chatroom %>
-		<% end %>
-	</div>
-	<div class="column">
+<div class="tiles is-ancestor">
+	<div class="tile is-parent is-vertical">
+		<div class="tile is-child">
+			<h1 class="title is-3"><%= @chatroom.name %></h1>
+		</div>
+		<div class="tile is-child">
+			
+		</div>
+		<div class="tile is-child">
+		</div>
 	</div>
 </div>
 
