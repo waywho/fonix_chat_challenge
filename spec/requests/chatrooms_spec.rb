@@ -16,11 +16,11 @@ RSpec.describe "/chatrooms", type: :request do
   # Chatroom. As you add validations to Chatroom, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryBot.build(:chatroom).attributes
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { name: nil }
   }
 
   describe "GET /index" do
@@ -85,14 +85,14 @@ RSpec.describe "/chatrooms", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "NEW CHATROOM"}
       }
 
       it "updates the requested chatroom" do
         chatroom = Chatroom.create! valid_attributes
         patch chatroom_url(chatroom), params: { chatroom: new_attributes }
         chatroom.reload
-        skip("Add assertions for updated state")
+        expect(chatroom.name).to eq("NEW CHATROOM")
       end
 
       it "redirects to the chatroom" do
