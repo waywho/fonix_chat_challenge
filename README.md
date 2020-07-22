@@ -1,24 +1,18 @@
-# README
+# Fonix Chat Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This challenge includes:
+- User authentication
+- Realtime chat using ActionCable
 
-Things you may want to cover:
+## Initial Install
 
-* Ruby version
+After database creation, please run 
+```rails db:seed```
+This will seed a default Chatroom Channel "General"
 
-* System dependencies
+This app uses `Redis` server to deliver chat messages, therefore will require Redis installation
 
-* Configuration
+## Chatroom Channels
+The app is create to enable future scaling to multiple chatrooms in the future.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There are model associations that allow such scaling up in the futre, but for now, new users are automatically added to one chatroom, i.e. the General chatroom
