@@ -1,0 +1,18 @@
+<h1 class="title is-1">Chatrooms</h1>
+<%= link_to 'New Chatroom', new_chatroom_path, class: "button is-primary" %>
+<br />
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chatrooms.each do |chatroom| %>
+      <tr>
+        <td><%= link_to chatroom.name, chatroom %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
