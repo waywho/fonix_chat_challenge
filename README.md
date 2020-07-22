@@ -22,10 +22,10 @@ One chatroom channel is programmed as required. All users are added to the chatr
 ## Installation
 
 After database creation, please run 
-```rails db:seed```
-This will seed a default Chatroom Channel "General"
 
-## Requirements and Configurations
+```rails db:seed```
+
+This will seed a default Chatroom Channel "General"
 
 This app requires `Redis` server installation to deliver chat messages, ensure to start `redis-server` for production deployment.
 
