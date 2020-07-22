@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
 	def create
 		message = current_user.messages.new(message_params)
 		if message.save
+			MessageRelayJob.perform_later(message)
+			respond_to do |format|
+    		format.js { render 'chatrooms/sent_message' }
+			end
 		else
 		end
 	end
