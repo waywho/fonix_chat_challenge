@@ -1,12 +1,28 @@
 <div class="tiles is-ancestor">
-	<div class="tile is-parent is-vertical">
-		<div class="tile is-child">
-			<h1 class="title is-3"><%= @chatroom.name %></h1>
+	<div class="tile is-vertical">
+		<div class="tile is-parent">
+			<div class="tile is-child">
+				<h1 class="title is-3"><%= @chatroom.name %></h1>
+			</div>
 		</div>
-		<div class="tile is-child">
-			
+		<div class="tile is-parent is-vertical">
+			<% @chatroom.messages.each do |message| %>
+				<%= render 'message', message: message %>
+			<% end %>
 		</div>
-		<div class="tile is-child">
+		<div class="tile is-parent">
+			<%= form_with(model: Message.new, local: true) do |form| %>
+				<%= form.text_field :chatroom_id, value: @chatroom.id, hidden: true %>
+			  <div class="field">
+			    <div class="control">
+			      <%= form.text_area :content, class: 'textarea is-fullwidth', placeholder: "say something" %>
+			    </div>
+			  </div>
+
+			  <div class="control">
+			    <%= form.submit 'Send', class: 'button is-primary is-pulled-right' %>
+			  </div>
+			<% end %>
 		</div>
 	</div>
 </div>

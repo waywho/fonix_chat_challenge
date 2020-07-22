@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
 
 
 	private
+	
 	def message_params
-     params.require(:chatroom).permit(:content)
-   end
+     params.require(:message).permit(:content, :chatroom_id)
+ 	end
 end
