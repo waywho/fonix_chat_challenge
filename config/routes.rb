@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	mount ActionCable.server => '/cable'
+	
   resources :chatrooms
   devise_for :users
   resources :messages
