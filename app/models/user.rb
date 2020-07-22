@@ -11,6 +11,15 @@ class User < ApplicationRecord
 
   after_create :join_general_chat
 
+  def last_message_sent_date
+     messages.sort_by(&:created_at).last.created_at
+  end
+
+  def recieved_count_since_last_sent
+    # assuming only one chatroom so all messages are counted as received by User
+    Message.where('created_at >= ?', last_message_sent_date).length
+  end
+
   private
 
 	def join_general_chat

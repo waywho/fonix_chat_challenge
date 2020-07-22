@@ -1,0 +1,4 @@
+send_weekly_report:
+  cron: "* * * * 1"
+  class: "WeeklyReportsWorker"
+  queue: default
