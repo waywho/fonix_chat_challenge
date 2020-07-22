@@ -29,7 +29,7 @@ This will seed a default Chatroom Channel "General"
 
 This app requires `Redis` server installation to deliver chat messages, ensure to start `redis-server` for production deployment.
 
-ActionMailer smtp configuration is required in `config/environments/production.rb` for the production enviornment in order for both User account confirmation and weekly email notification. An example is commented out for ease of configuration.
+ActionMailer smtp configuration is required in `config/environments/production.rb` for the production enviornment in order for both User account confirmation and weekly email notification. An example is added but commented out for ease of configuration.
 
 ## Chatroom Channels
 The app is create to enable future scaling to multiple chatrooms in the future.
