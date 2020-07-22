@@ -8,4 +8,13 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   validates :name, presence: true,  uniqueness: true
+
+  after_create :join_general_chat
+
+  private
+
+	def join_general_chat
+		chatroom = Chatroom.find_by_name("General")
+		ChatroomUser.create(user: self, chatroom: chatroom)
+	end
 end

@@ -11,4 +11,13 @@ RSpec.describe User, type: :model do
 		it { should validate_presence_of(:name) }
 		it { should validate_uniqueness_of(:name) }
 	end
+
+	describe 'After create account' do
+		it "should auto added to General chat" do
+			chatroom = FactoryBot.create(:chatroom, name: "General")
+			user = FactoryBot.create(:user)
+			user.reload
+			expect(user.chatrooms.map(&:name)).to include("General")
+		end
+	end
 end

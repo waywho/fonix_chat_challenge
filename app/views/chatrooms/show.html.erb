@@ -5,7 +5,7 @@
 		<%= render 'messages/message', message: message %>
 	<% end %>
 </div>
-		
+<div class="message is-danger message-box" style="display: none"><div id="message-body" class="message-body"></div></div>
 <%= form_with(model: Message.new, id: "chat-input") do |form| %>
 	<%= form.text_field :chatroom_id, value: @chatroom.id, hidden: true %>
   <div class="field">
