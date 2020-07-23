@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  AcitonMailer configuration required here
+  # AcitonMailer configuration required here
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
@@ -56,7 +56,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   config.action_cable.url = 'wss://fonix-chat.herokuapp.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  config.action_cable.allowed_request_origins = [ 'http://fonix-chat.herokuapp.com', /http:\/\/fonix-chat.herokuapp.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
