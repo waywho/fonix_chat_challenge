@@ -16,11 +16,11 @@
     <section class="section">
       <div class="container">
         <% if notice.present? %>
-        <p class="message is-info"><%= notice %></p>
+        <div class="message is-info"><div class="message-body"><%= notice %></div></div>
         <% end %>
 
         <% if alert.present? || flash[:error] %>
-          <p class="message is-danger"><%= alert || flash[:error] %></p>
+          <div class="message is-danger"><div class="message-body"><%= alert || flash[:error] %></div></div>
         <% end %>
         <%= yield %>
       </div>

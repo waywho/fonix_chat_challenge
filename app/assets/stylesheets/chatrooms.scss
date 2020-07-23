@@ -15,6 +15,11 @@
 	height: 60vh;
 	max-height: 60vh;
 	overflow-y: scroll;
+	border-top: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	border-right: 1px solid #dbdbdb;
+	border-radius: 5px 5px 0px 0px;
+	padding: 15px;
 }
 
 .chat-area {
@@ -23,4 +28,8 @@
 
 .message-piece {
 	margin-bottom: 5px;
+}
+
+.chat-box {
+	border-radius: 0px 0px 5px 5px;
 }

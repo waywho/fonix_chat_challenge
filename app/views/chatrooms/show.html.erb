@@ -1,4 +1,4 @@
-<h1 class="title is-3"><%= @chatroom.name %></h1>
+<h1 class="title is-3"><%= @chatroom.name %> Chat</h1>
 
 <div id="chatroom-<%= @chatroom.id %>" class="message-area">
 	<% @chatroom.messages.each do |message| %>
@@ -10,7 +10,7 @@
 	<%= form.text_field :chatroom_id, value: @chatroom.id, hidden: true %>
   <div class="field">
     <div class="control">
-      <%= form.text_area :content, class: 'textarea is-fullwidth', placeholder: "say something" %>
+      <%= form.text_area :content, class: 'textarea is-fullwidth chat-box', placeholder: "say something" %>
     </div>
   </div>
 
