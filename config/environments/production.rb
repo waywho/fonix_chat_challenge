@@ -1,17 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # AcitonMailer configuration required here
-  # ActionMailer::Base.smtp_settings = {
-  #   :address        => 'smtp.sendgrid.net',
-  #   :port           => '587',
-  #   :authentication => :plain,
-  #   :user_name      => ENV['SENDGRID_USERNAME'],
-  #   :password       => ENV['SENDGRID_PASSWORD'],
-  #   :domain         => 'lensshift01.heroku.com',
-  #   :enable_starttls_auto => true
-  # }
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  AcitonMailer configuration required here
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'fonix-chat.herokuapp.com',
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.default_url_options = { host: 'fonix-chat.herokuapp.com'}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -55,7 +55,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
+  config.action_cable.url = 'wss://fonix-chat.herokuapp.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
